@@ -14,7 +14,8 @@ class EmailAddressParser
 
   def parse 
     delimiters = [',', ' ']
-    csv_emails.split(Regexp.union(delimiters))
+    with_empty = csv_emails.split(Regexp.union(delimiters))
+    with_empty.reject { |email| email.empty? }
    end
    
  end 
