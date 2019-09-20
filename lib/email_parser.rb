@@ -13,5 +13,6 @@ class EmailParser
 
 
   def parse 
+    delimiters = [',', ' ']
     csv_emails.split(Regexp.union(delimiters))
 end
